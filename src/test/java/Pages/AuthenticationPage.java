@@ -13,14 +13,14 @@ public class AuthenticationPage extends BasePage {
         super(driver);
     }
 
-    private final static By loginButton=By.xpath("a[@class='login']") ;
-    private final static By signInButton=By.cssSelector("#SubmitLogin");
+    private  By loginButton=By.xpath("a[@class='login']") ;
+    private  By signInButton=By.cssSelector("#SubmitLogin");
 
 
-    private final static By emailInputForNewAcc = By.cssSelector("#email_create");
-    private final static By createAccountButton = By.cssSelector("#SubmitCreate");
-    private final static By emailInputForSignIn=By.cssSelector("#email");
-    private final static By passwordInputForSignIn=By.cssSelector("#passwd");
+    private  By emailInputForNewAcc = By.cssSelector("#email_create");
+    private  By createAccountButton = By.cssSelector("#SubmitCreate");
+    private  By emailInputForSignIn=By.cssSelector("#email");
+    private  By passwordInputForSignIn=By.cssSelector("#passwd");
 
     @Override
     public void waitForPageLoaded() {
