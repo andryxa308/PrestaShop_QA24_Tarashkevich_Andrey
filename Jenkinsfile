@@ -24,7 +24,7 @@ pipeline {
     stages {
         stage('Run test') {
             steps {
-                git branch: "${params.BRANCH}", url: 'https://github.com/andryxa308/PrestaShop_QA24_TarashkevichAndrey'
+                git branch: "${params.BRANCH}", url: 'https://github.com/andryxa308/PrestaShop_QA24_Tarashkevich_Andrey'
 
                 sh "mvn -Dmaven.test.failure.ignore=true -Dsuite=${params.SUITE} -Dbrowser=${params.BROWSER} -Dheadless=${params.HEADLESS} clean test"
 
