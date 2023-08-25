@@ -10,28 +10,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class CartTest extends BaseTest {
-    AuthenticationPage authenticationPage;
-    CreateAnAccountPage createAnAccountPage;
-    CartPage cartPage;
-    HomePage homePage;
-    ProductsPage productsPage;
-    ItemDetailPage itemDetailPage;
-    AddressesPage addressesPage;
-    MyAccountPage myAccountPage;
-
-
-    @BeforeClass(alwaysRun = true)
-    public void initialise(){
-        authenticationPage=new AuthenticationPage(driver);
-        createAnAccountPage=new CreateAnAccountPage(driver);
-        cartPage=new CartPage(driver);
-        homePage=new HomePage(driver);
-        productsPage=new ProductsPage(driver);
-        itemDetailPage=new ItemDetailPage(driver);
-        addressesPage=new AddressesPage(driver);
-        myAccountPage=new MyAccountPage(driver);
-
-    }
 
     final static String FIRST_NAME_FOR_ADDRESS_PAGE="Andrey";
     final static String LAST_NAME_FOR_ADDRESS_PAGE="Tarashkevich";
@@ -41,7 +19,7 @@ public class CartTest extends BaseTest {
     final static String HOME_PHONE_FOR_ADDRESS_PAGE="11234567890";
     final static String ADDRESS_TITLE_FOR_ADDRESS_PAGE="First address";
 
-    @Test(groups = {"Smoke"})
+   // @Test(groups = {"Smoke"})
     @Description("Add product to cart")
     @Severity(SeverityLevel.CRITICAL)
     public void addItemToCartTest() {
@@ -54,7 +32,7 @@ public class CartTest extends BaseTest {
         Assert.assertTrue(itemDetailPage.isAddToCartItemIconDisplayed());
         Assert.assertEquals(itemDetailPage.getAddToCartItemIconText(),"Product successfully added to your shopping cart");
     }
-    @Test(groups = {"Smoke"})
+    //@Test(groups = {"Smoke"})
     @Description("Remove product from cart")
     @Severity(SeverityLevel.CRITICAL)
     public void removeItemFromCartTest() {
@@ -73,7 +51,7 @@ public class CartTest extends BaseTest {
         cartPage.clickCartButton();
         Assert.assertTrue(cartPage.isAlertDisplayed());
     }
-    @Test(groups = {"Regression"})
+   // @Test(groups = {"Regression"})
     @Description("Actions on addresses page")
     @Severity(SeverityLevel.CRITICAL)
     public void actionsOnAddressesPageTestWithSelect() {

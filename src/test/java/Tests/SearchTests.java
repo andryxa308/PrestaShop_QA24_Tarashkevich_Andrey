@@ -1,5 +1,6 @@
 package Tests;
 
+import Pages.BasePage;
 import Pages.HomePage;
 import Pages.ItemDetailPage;
 import Pages.ProductsPage;
@@ -12,17 +13,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class SearchTests extends BaseTest{
-    HomePage homePage;
-    ProductsPage productsPage;
-    ItemDetailPage itemDetailPage;
-
-    @BeforeClass(alwaysRun = true)
-    public void initialise(){
-
-        homePage=new HomePage(driver);
-        productsPage=new ProductsPage(driver);
-        itemDetailPage=new ItemDetailPage(driver);
-    }
     final static String ITEM="Pasta";
     @Test(groups = {"Regression"})
     @Description("Search dresses and how many dresses are in prestashop")

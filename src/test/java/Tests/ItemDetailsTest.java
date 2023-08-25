@@ -1,29 +1,12 @@
 package Tests;
 
-import Pages.AuthenticationPage;
-import Pages.CartPage;
-import Pages.ItemDetailPage;
-import Pages.ProductsPage;
+import Pages.*;
 import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 public class ItemDetailsTest extends BaseTest {
-    ItemDetailPage itemDetailPage;
-    ProductsPage productsPage;
-    AuthenticationPage authenticationPage;
-    CartPage cartPage;
-
-    @BeforeClass (alwaysRun = true)
-    public void initialise(){
-
-        itemDetailPage=new ItemDetailPage(driver);
-        productsPage=new ProductsPage(driver);
-        authenticationPage=new AuthenticationPage(driver);
-        cartPage=new CartPage(driver);
-
-    }
     @Test(groups={"Regression"},dataProvider = "inventoryItemsTestOnProductPageData")
     @Description("Check item name, price and description")
     @Severity(SeverityLevel.NORMAL)

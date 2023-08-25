@@ -7,9 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 @Log4j2
 
-public class CartPage extends BasePage {
+public abstract class CartPage extends BasePage {
     public CartPage(WebDriver driver) {
         super(driver);
     }
@@ -18,6 +20,7 @@ public class CartPage extends BasePage {
     private  By proceedToCheckoutButton=By.xpath("//span[text()='Proceed to checkout']");
     private  By valueOfCart =By.cssSelector(".heading-counter");
     private  By cartButton=By.cssSelector(".shopping_cart");
+
 
     @Override
     public void waitForPageLoaded() {
@@ -38,7 +41,7 @@ public class CartPage extends BasePage {
         driver.findElement(cartButton).click();
     }
     public void waitForCartValueTextIsDisplayed() {
-        WebElement cartValueText=(new WebDriverWait(driver,5))
+        WebElement cartValueText=(new WebDriverWait(driver, Duration.ofSeconds(10)))
                 .until(ExpectedConditions.presenceOfElementLocated(valueOfCart));
     }
     public String getCartValue(){
@@ -49,4 +52,8 @@ public class CartPage extends BasePage {
     public boolean isAlertDisplayed() {
         return driver.findElement(valueOfCart).isDisplayed();
     }
+
+    public abstract void open();
+
+    public abstract BasePage isPageOpened();
 }

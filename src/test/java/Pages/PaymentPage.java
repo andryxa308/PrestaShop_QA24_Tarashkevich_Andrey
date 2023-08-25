@@ -4,7 +4,7 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 @Log4j2
-public class PaymentPage extends BasePage{
+public abstract class PaymentPage extends BasePage{
     public PaymentPage(WebDriver driver) {
         super(driver);
     }
@@ -21,4 +21,8 @@ public class PaymentPage extends BasePage{
         log.info("Get text from warning on payment page");
         return driver.findElement(warningOnPaymentPage).getText();
     }
+
+    public abstract void open();
+
+    public abstract BasePage isPageOpened();
 }

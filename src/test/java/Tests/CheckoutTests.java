@@ -1,39 +1,15 @@
 package Tests;
 import Pages.*;
 import io.qameta.allure.Description;
-import io.qameta.allure.Link;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class CheckoutTests extends BaseTest {
-    AuthenticationPage authenticationPage;
-    CreateAnAccountPage createAnAccountPage;
-    CartPage cartPage;
-    HomePage homePage;
-    ProductsPage productsPage;
-    ItemDetailPage itemDetailPage;
-    AddressesPage addressesPage;
-    ShippingPage shippingPage;
-    PaymentPage paymentPage;
-    MyAccountPage myAccountPage;
 
-    @BeforeClass(alwaysRun = true)
-    public void initialise(){
-        authenticationPage=new AuthenticationPage(driver);
-        createAnAccountPage=new CreateAnAccountPage(driver);
-        cartPage=new CartPage(driver);
-        homePage=new HomePage(driver);
-        productsPage=new ProductsPage(driver);
-        itemDetailPage=new ItemDetailPage(driver);
-        addressesPage=new AddressesPage(driver);
-        shippingPage=new ShippingPage(driver);
-        paymentPage=new PaymentPage(driver);
-        myAccountPage=new MyAccountPage(driver);
-    }
+
     final static String FIRST_NAME_FOR_ADDRESS_PAGE="Andrey";
     final static String LAST_NAME_FOR_ADDRESS_PAGE="Tarashkevich";
     final static String ADDRESS_FOR_ADDRESS_PAGE="street New home 1 flat 1";

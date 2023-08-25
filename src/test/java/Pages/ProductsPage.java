@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 @Log4j2
-public class ProductsPage extends BasePage {
+public abstract class ProductsPage extends BasePage {
     public ProductsPage(WebDriver driver) {
         super(driver);
     }
@@ -89,4 +89,8 @@ private  By itemLink= By.xpath("//div[@class='right-block']//a[@class='product-n
         log.info("Get text from warning alert after searching product by name");
         return driver.findElement(warningAlert).getText();
     }
+
+    public abstract void open();
+
+    public abstract BasePage isPageOpened();
 }

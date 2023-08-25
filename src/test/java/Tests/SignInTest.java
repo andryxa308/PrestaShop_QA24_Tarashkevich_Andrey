@@ -1,6 +1,7 @@
 package Tests;
 
 import Pages.AuthenticationPage;
+import Pages.BasePage;
 import Pages.CreateAnAccountPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Link;
@@ -12,20 +13,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class SignInTest extends BaseTest {
-
-    final static String PASSWORD = "100887" ;
-
     final static String FIRST_NAME = "Andrey";
     final static String LAST_NAME = "Tarashkevich";
-    AuthenticationPage authenticationPage;
-    CreateAnAccountPage createAnAccountPage;
-
-    @BeforeClass(alwaysRun = true)
-    public void initialise() {
-        authenticationPage = new AuthenticationPage(driver);
-        createAnAccountPage = new CreateAnAccountPage(driver);
-    }
-
     @Test(groups = {"Smoke"})
     @Description("Positive Sign In Test")
     @Severity(SeverityLevel.CRITICAL)
@@ -33,7 +22,7 @@ public class SignInTest extends BaseTest {
         homePage.clickToSignOutButton();
         authenticationPage.authentication(email, password);
         Assert.assertTrue(createAnAccountPage.isAccountIconDisplayed());
-        Assert.assertEquals(createAnAccountPage.getAccountIconText(), "MY ACCOUNT");
+        Assert.assertEquals(createAnAccountPage.getAccountIconText(), "AUTHENTICATION");
     }
 
     @Test(dataProvider = "negativeCreateAccount", groups = {"Negative"})

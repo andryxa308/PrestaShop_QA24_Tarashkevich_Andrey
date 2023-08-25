@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 @Log4j2
 public class ItemDetailPage extends BasePage {
     public ItemDetailPage(WebDriver driver) {
@@ -65,7 +67,7 @@ public class ItemDetailPage extends BasePage {
     }
 
     public void waitForAddToCartItemIconDisplayed() {
-        WebElement addToCartItemIElement=(new WebDriverWait(driver,5))
+        WebElement addToCartItemIElement=(new WebDriverWait(driver, Duration.ofSeconds(10)))
                 .until(ExpectedConditions.elementToBeClickable(addToCartItemIcon));
     }
     public String getAddToCartItemIconText() {

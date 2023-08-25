@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 @Log4j2
-public class CreateAnAccountPage extends BasePage {
+public abstract class CreateAnAccountPage extends BasePage {
     public CreateAnAccountPage(WebDriver driver) {
         super(driver);
     }
@@ -96,5 +96,7 @@ public class CreateAnAccountPage extends BasePage {
 
         return driver.findElement(errorMassage).getText();
     }
+
+    public abstract BasePage isPageOpened();
 }
 

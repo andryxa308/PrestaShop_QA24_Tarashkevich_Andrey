@@ -5,7 +5,7 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 @Log4j2
-public class ShippingPage extends BasePage{
+public abstract class ShippingPage extends BasePage{
 
     public ShippingPage(WebDriver driver) {
 
@@ -45,4 +45,7 @@ public class ShippingPage extends BasePage{
         driver.findElement(proceedToCheckoutButtonOnShippingPage).click();
     }
 
+    public abstract void open();
+
+    public abstract BasePage isPageOpened();
 }
