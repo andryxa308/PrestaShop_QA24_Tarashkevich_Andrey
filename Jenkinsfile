@@ -10,7 +10,7 @@ pipeline {
     triggers {
         parameterizedCron('''
         0 21 * * 0-6 %SUITE=smokeTest.xml;BROWSER=Chrome;HEADLESS=true;
-        30 21 * * 0-6 %SUITE=regressionTest.xml;BROWSER=Safari;HEADLESS=false;
+
         ''')
     }
 
