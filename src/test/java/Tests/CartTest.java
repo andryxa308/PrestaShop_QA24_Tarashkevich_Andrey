@@ -30,7 +30,7 @@ public class CartTest extends BaseTest {
         itemDetailPage.clickAddToCardButton();
         itemDetailPage.waitForAddToCartItemIconDisplayed();
         Assert.assertTrue(itemDetailPage.isAddToCartItemIconDisplayed());
-        Assert.assertEquals(itemDetailPage.getAddToCartItemIconText(),"Product successfully added to your shopping cart");
+        Assert.assertEquals(itemDetailPage.getAddToCartItemIconText(),"Товар был успешно добавлен в вашу корзину");
     }
     @Test(groups = {"Smoke"})
     @Description("Remove product from cart")
