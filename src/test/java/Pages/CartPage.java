@@ -11,7 +11,7 @@ import java.time.Duration;
 
 @Log4j2
 
-public abstract class CartPage extends BasePage {
+public  class CartPage extends BasePage {
     public CartPage(WebDriver driver) {
         super(driver);
     }
@@ -53,7 +53,5 @@ public abstract class CartPage extends BasePage {
         return driver.findElement(valueOfCart).isDisplayed();
     }
 
-    public abstract void open();
 
-    public abstract BasePage isPageOpened();
 }

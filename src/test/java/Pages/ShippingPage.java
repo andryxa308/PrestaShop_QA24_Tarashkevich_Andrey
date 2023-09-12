@@ -5,7 +5,7 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 @Log4j2
-public abstract class ShippingPage extends BasePage{
+public class ShippingPage extends BasePage{
 
     public ShippingPage(WebDriver driver) {
 
@@ -34,7 +34,7 @@ public abstract class ShippingPage extends BasePage{
     }
     public void clickCloseErrorMessageButton(){
         log.info("Click 'close' button");
-      driver.findElement(closeErrorMessageButton).click();
+        driver.findElement(closeErrorMessageButton).click();
     }
     public void clickAgreeCheckBoxOnShippingPageButton(){
         log.info("Click 'Agree' check box button");
@@ -45,7 +45,4 @@ public abstract class ShippingPage extends BasePage{
         driver.findElement(proceedToCheckoutButtonOnShippingPage).click();
     }
 
-    public abstract void open();
-
-    public abstract BasePage isPageOpened();
 }

@@ -4,7 +4,7 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 @Log4j2
-public abstract class HomePage  extends BasePage{
+public  class HomePage  extends BasePage{
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -75,7 +75,5 @@ public abstract class HomePage  extends BasePage{
         driver.findElement(tShirtSection).click();
     }
 
-    public abstract void open();
 
-    public abstract BasePage isPageOpened();
 }

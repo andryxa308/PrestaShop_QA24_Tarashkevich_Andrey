@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 ;
 
 @Log4j2
-public abstract class MyAccountPage extends BasePage{
+public  class MyAccountPage extends BasePage{
     public MyAccountPage(WebDriver driver) {
         super(driver);
     }
@@ -38,7 +38,5 @@ public abstract class MyAccountPage extends BasePage{
         driver.switchTo().defaultContent();
     }
 
-    public abstract void open();
 
-    public abstract BasePage isPageOpened();
 }

@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 
 
 @Log4j2
-public abstract class AuthenticationPage extends BasePage {
+public  class AuthenticationPage extends BasePage {
     public AuthenticationPage(WebDriver driver) {
         super(driver);
     }
@@ -60,8 +60,6 @@ public abstract class AuthenticationPage extends BasePage {
         driver.findElement(passwordInputForSignIn).sendKeys(passwordForSignIn);
     }
 
-    public abstract void open();
 
-    public abstract BasePage isPageOpened();
 }
 

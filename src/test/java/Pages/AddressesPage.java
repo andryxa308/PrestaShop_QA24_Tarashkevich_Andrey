@@ -11,7 +11,7 @@ import java.util.List;
 
 @Log4j2
 
-public abstract class AddressesPage extends BasePage {
+public  class AddressesPage extends BasePage {
     public AddressesPage(WebDriver driver) {
         super(driver);
     }
@@ -89,7 +89,5 @@ public abstract class AddressesPage extends BasePage {
         driver.findElement(proceedToCheckoutOnAddressesPage).click();
     }
 
-    public abstract void open();
 
-    public abstract BasePage isPageOpened();
 }
